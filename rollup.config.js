@@ -14,26 +14,26 @@ export default {
     {
       file: pkg.main,
       format: "cjs",
-      sourcemap: true
+      sourcemap: "inline",
     },
     {
       file: pkg.module,
       format: "es",
-      sourcemap: true
-    }
+      sourcemap: "inline",
+    },
   ],
   plugins: [
     external(),
     postcss({
-      modules: true
+      modules: true,
     }),
     url(),
     svgr(),
     babel({
       exclude: "node_modules/**",
-      plugins: ["external-helpers"]
+      plugins: ["external-helpers"],
     }),
     resolve(),
-    commonjs()
-  ]
+    commonjs(),
+  ],
 };

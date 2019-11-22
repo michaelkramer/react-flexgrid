@@ -1,23 +1,52 @@
 {
+  "root": true,
   "parser": "babel-eslint",
-  "extends": [
-    "standard",
-    "standard-react"
-  ],
   "env": {
+    "node": true,
     "es6": true
   },
-  "plugins": [
-    "react"
-  ],
-  "parserOptions": {
-    "sourceType": "module"
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["flowtype", "babel", "react"],
+  "globals": {
+    "$ReadOnly": true,
+    "$ReadOnlyArray": true,
+    "$Exact": true
   },
   "rules": {
-    // don't force es6 functions to include space before paren
-    "space-before-function-paren": 0,
-
-    // allow specifying true explicitly for boolean props
-    "react/jsx-boolean-value": 0
+    "no-console": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
+    "object-shorthand": "error",
+    "flowtype/boolean-style": [2, "boolean"],
+    "flowtype/define-flow-type": 1,
+    "flowtype/delimiter-dangle": 0,
+    "flowtype/no-mixed": 0,
+    "flowtype/no-types-missing-file-annotation": 2,
+    "flowtype/no-weak-types": 0,
+    "flowtype/require-parameter-type": 0,
+    "flowtype/require-readonly-react-props": 0,
+    "flowtype/require-return-type": 0,
+    "flowtype/require-valid-file-annotation": 0,
+    "flowtype/semi": 0,
+    "flowtype/space-after-type-colon": [
+      2,
+      "always",
+      { "allowLineBreak": true }
+    ],
+    "flowtype/space-before-generic-bracket": [2, "never"],
+    "flowtype/space-before-type-colon": [2, "never"],
+    "flowtype/type-id-match": 0,
+    "flowtype/union-intersection-spacing": [2, "always"],
+    "flowtype/use-flow-type": 1
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    }
   }
 }

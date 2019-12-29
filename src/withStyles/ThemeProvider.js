@@ -11,7 +11,7 @@ const breakpoints = (minWidth: number) => {
 };
 
 const spacing = {
-  unit: 16
+  unit: 16,
 };
 
 const defaultTheme = {
@@ -20,12 +20,11 @@ const defaultTheme = {
   breakpoint: {
     sm: 600,
     md: 900,
-    lg: 1200
-  }
+    lg: 1200,
+  },
 };
 
 const ThemeProvider = ({ children, theme, ...rest }: any) => {
-  console.log("==> theme", theme);
   const mergedTheme = theme ? merge(defaultTheme, theme) : defaultTheme;
   return (
     <JSSThemeProvider theme={mergedTheme} {...rest}>

@@ -5,13 +5,13 @@ import React from "react";
 import classNames from "classnames";
 import withStyles from "../withStyles";
 
-type Props = {
+type $Props = {|
   classes: Object,
   className: string,
   fluid?: boolean,
   gutter?: boolean,
-  spacing?: number
-};
+  children: any,
+|};
 
 const GridContent = ({
   classes,
@@ -19,8 +19,7 @@ const GridContent = ({
   fluid,
   children,
   gutter,
-  spacing = 16
-}: Props) => {
+}: $Props) => {
   return (
     <div
       className={classNames(
@@ -34,16 +33,17 @@ const GridContent = ({
   );
 };
 
-const stylesGrid = theme => ({
+const stylesGrid = (theme) => ({
   container_fluid: {
-    padding: props => `0 ${props.spacing}px`
+    padding: `0 ${theme.spacing.unit}px`,
   },
   container: {
     marginRight: "auto",
     marginLeft: "auto",
     boxSizing: "border-box",
     maxWidth: "1200px",
-    boxSizing: "inherit"
-  }
+    boxSizing: "inherit",
+  },
 });
+
 export default withStyles(stylesGrid)(GridContent);

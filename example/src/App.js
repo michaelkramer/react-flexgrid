@@ -23,7 +23,9 @@ class BodyContent extends React.Component {
             <Row>
               <Col xs={12}>
                 <h2>This is a simple flexgrid. react-flexgrid</h2>
-                <div>A flexgrid with Grid, Row &amp; Col using JSS</div>
+                <div>
+                  A flexgrid with Grid, Row &amp; Col using JSS. CI test here.
+                </div>
               </Col>
             </Row>
           </Grid>

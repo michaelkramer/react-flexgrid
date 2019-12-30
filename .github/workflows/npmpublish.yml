@@ -13,10 +13,10 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm CI
-      - run: npm prepare
-      - run: npm test
-      - run: npm predeploy
+      - run: npm run CI
+      - run: npm run prepare
+      - run: npm run test
+      - run: npm run predeploy
 
   publish-npm:
     needs: build

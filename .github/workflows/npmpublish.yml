@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - run: npm CI
       - run: npm prepare
       - run: npm test
       - run: npm predeploy

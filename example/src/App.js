@@ -3,14 +3,67 @@ import { Grid, Row, Col, ThemeProvider, withStyles } from "react-flexgrid";
 import MD from "./markdown";
 
 const styles = (theme) => ({
+  "@global": {
+    pre: { overflow: "hidden" },
+  },
   headerWrap: {
-    padding: theme.spacing.unit * 4,
+    paddingTop: theme.spacing.unit * 4,
+    paddingBottom: theme.spacing.unit * 4,
     textAlign: "center",
     fontSize: theme.spacing.unit * 2,
     backgroundColor: "slateblue",
     fontFamily: `"Josefin Sans",Verdana,sans-serif`,
   },
   homeWrap: { fontFamily: `"Josefin Sans",Verdana,sans-serif` },
+
+  hidden_xs: {
+    display: "none",
+    [theme.breakpoints(theme.breakpoint.sm)]: {
+      display: "block",
+    },
+    [theme.breakpoints(theme.breakpoint.md)]: {
+      display: "block",
+    },
+    [theme.breakpoints(theme.breakpoint.lg)]: {
+      display: "block",
+    },
+  },
+  hidden_sm: {
+    display: "block",
+    [theme.breakpoints(theme.breakpoint.sm)]: {
+      display: "none",
+    },
+    [theme.breakpoints(theme.breakpoint.md)]: {
+      display: "block",
+    },
+    [theme.breakpoints(theme.breakpoint.lg)]: {
+      display: "block",
+    },
+  },
+  hidden_md: {
+    display: "block",
+    [theme.breakpoints(theme.breakpoint.sm)]: {
+      display: "block",
+    },
+    [theme.breakpoints(theme.breakpoint.md)]: {
+      display: "none",
+    },
+    [theme.breakpoints(theme.breakpoint.lg)]: {
+      display: "block",
+    },
+  },
+  hidden_lg: {
+    display: "block",
+    [theme.breakpoints(theme.breakpoint.sm)]: {
+      display: "block",
+    },
+    [theme.breakpoints(theme.breakpoint.md)]: {
+      display: "block",
+    },
+    [theme.breakpoints(theme.breakpoint.lg)]: {
+      display: "none",
+    },
+  },
 });
 
 class BodyContent extends React.Component {
@@ -31,6 +84,12 @@ class BodyContent extends React.Component {
           </Grid>
         </header>
         <article>
+          {/* <div>
+            <div className={classes.hidden_xs}>hidden_xs</div>
+            <div className={classes.hidden_sm}>hidden_sm</div>
+            <div className={classes.hidden_md}>hidden_md</div>
+            <div className={classes.hidden_lg}>hidden_lg</div>
+          </div> */}
           <Grid fluid className={classes.homeWrap}>
             <Section
               title="Responsive"
@@ -300,11 +359,11 @@ const Box = (props) => (
   <div
     style={{
       backgroundColor: props.color ? props.color : "slateBlue",
-      padding: "16px",
+      //padding: "16px",
       margin: "16px",
     }}
   >
-    {props.children ? props.children : " "}
+    {props.children ? props.children : "-"}
   </div>
 );
 
